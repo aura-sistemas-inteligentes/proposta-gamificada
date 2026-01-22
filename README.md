@@ -1,5 +1,3 @@
-> 💡 **Nota:** Este é um projeto de demonstração criado para Michelle da Aura Sistemas Inteligentes. O código original e a ideia podem ser encontrados no repositório [proposta-gamificada](https://github.com/aura-sistemas-inteligentes/proposta-gamificada).
-
 # 💌 Convite Gamificado: Transforme um "Oi" em uma Experiência Inesquecível
 
 **Cansado de convites que são esquecidos em 5 minutos? E se o seu próximo convite fosse uma aventura?**
