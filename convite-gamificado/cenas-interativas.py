@@ -119,51 +119,47 @@ elif st.session_state.cena == 4:
 
     """)
 
-   # nome = st.text_input("Digite seu nome:", placeholder="Ex: João")
-
-    if nome:
-        st.markdown("---")
-        st.markdown("### 💬 Pronto para enviar sua resposta?")
-        
-        # Monta a mensagem do WhatsApp
-        mensagem = f"""Oi Michelle! 😊
+      st.markdown("---")
+    st.markdown("### 💬 Pronto para enviar sua resposta?")
+    
+    # Monta a mensagem do WhatsApp
+    mensagem = f"""Oi Michelle! 😊
 
 Acabei de completar as cenas do convite!
-
 
 Que tal {st.session_state.escolha}
 
 Bora marcar? 🎬"""
-        
-        # Codifica a mensagem para URL
-        mensagem_encoded = urllib.parse.quote(mensagem)
-        
-        # Cria o link do WhatsApp
-        whatsapp_link = f"https://wa.me/{MEU_WHATSAPP}?text={mensagem_encoded}"
-        
-        # Botão que abre o WhatsApp
-        st.markdown(f"""
-        <a href="{whatsapp_link}" target="_blank">
-            <button style="
-                background-color: #25D366;
-                color: white;
-                padding: 15px 32px;
-                text-align: center;
-                font-size: 18px;
-                border: none;
-                border-radius: 8px;
-                cursor: pointer;
-                width: 100%;
-                font-weight: bold;
-            ">
-                📱 Enviar resposta pelo WhatsApp
-            </button>
-        </a>
-        """, unsafe_allow_html=True )
-        
-        st.markdown("")
-        
-        if st.button("🔁 Recomeçar", use_container_width=True):
-            st.session_state.cena = 1
-            st.session_state.clear()
-            st.rerun()
+    
+    # Codifica a mensagem para URL
+    mensagem_encoded = urllib.parse.quote(mensagem)
+    
+    # Cria o link do WhatsApp
+    whatsapp_link = f"https://wa.me/{MEU_WHATSAPP}?text={mensagem_encoded}"
+    
+    # Botão que abre o WhatsApp
+    st.markdown(f"""
+    <a href="{whatsapp_link}" target="_blank">
+        <button style="
+            background-color: #25D366;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        ">
+            📱 Enviar resposta pelo WhatsApp
+        </button>
+    </a>
+    """, unsafe_allow_html=True )
+    
+    st.markdown("")
+    
+    if st.button("🔁 Recomeçar", use_container_width=True):
+        st.session_state.cena = 1
+        st.session_state.clear()
+        st.rerun()
