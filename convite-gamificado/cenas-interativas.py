@@ -7,6 +7,12 @@ st.set_page_config(
     layout="centered"
 )
 
+# Desabilita tradução automática do navegador
+st.markdown("""
+<meta name="google" content="notranslate">
+<meta http-equiv="Content-Language" content="pt-BR">
+""", unsafe_allow_html=True )
+
 MEU_WHATSAPP = "5564984207232"
 
 if "cena" not in st.session_state:
