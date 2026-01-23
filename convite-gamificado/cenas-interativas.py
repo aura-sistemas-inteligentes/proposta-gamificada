@@ -7,9 +7,7 @@ st.set_page_config(
     layout="centered"
 )
 
-# Configuração - COLOQUE SEU NÚMERO AQUI (com código do país, sem + ou espaços)
-# Exemplo: "5511999999999" para Brasil
-MEU_WHATSAPP = "5564984207232"  # ⚠️ ALTERE AQUI!
+MEU_WHATSAPP = "5564984207232"
 
 if "cena" not in st.session_state:
     st.session_state.cena = 1
@@ -27,7 +25,7 @@ if st.session_state.cena == 1:
     Entre conversas aleatórias e risadas despretensiosas…  
     **um olhar que durou mais que o necessário.**
     
-    E a chuva caiu como se não ouvesse amanhã.            
+    E a chuva caiu como se não houvesse amanhã.            
 
     Algo ali já dizia: "a gente se vê de novo".
     """)
@@ -41,7 +39,7 @@ elif st.session_state.cena == 2:
     st.title("🎬 Cena 2 — O Casamento")
 
     st.markdown("""
-    Algumas semana depois. Um casamento, nossos amigos de branco, felicidade no ar.
+    Algumas semanas depois. Um casamento, nossos amigos de branco, felicidade no ar.
     
     Você de camisa azul claro, elegante sem esforço.  
     Eu de vestido florido azul escuro, tentando não tropeçar no próprio pé.
@@ -84,20 +82,8 @@ elif st.session_state.cena == 3:
         ]
     )
 
-    st.markdown("---")
-    
-    #horario = st.radio(
-     #   "**Qual horário combina mais com você?**",
-      #  [
-       #     "☀️ Manhã (9h-12h) — começar o dia bem",
-        #    "🌤️ Tarde (14h-17h) — aquele break no meio do dia",
-         #   "🌅 Fim de tarde (17h-19h) — pegar o pôr do sol",
-          #  "🌙 Noite (19h-22h) — quando o dia acalma"
-       # ]
-    #)
     if st.button("Confirmar escolha 🎯", use_container_width=True):
         st.session_state.escolha = escolha
-       # st.session_state.horario = horario
         st.session_state.cena = 4
         st.rerun()
 
@@ -105,24 +91,22 @@ elif st.session_state.cena == 3:
 elif st.session_state.cena == 4:
     st.title("🎬 Cena Final — Seu Momento")
 
-    st.success("✨ Escolhas registradas!")
+    st.success("✨ Escolha registrada!")
 
     st.markdown(f"""
-    **Cena escolhida:** {st.session_state.escolha}  
+    **Cena escolhida:** {st.session_state.escolha}
     """)
-# **Horário preferido:** {st.session_state.horario}
+
     st.markdown("---")
 
     st.markdown("""
     Dois encontros em cenários diferentes já aconteceram.  
     Agora é só levar isso do código pra vida real 😌
-
     """)
 
-      st.markdown("---")
+    st.markdown("---")
     st.markdown("### 💬 Pronto para enviar sua resposta?")
     
-    # Monta a mensagem do WhatsApp
     mensagem = f"""Oi Michelle! 😊
 
 Acabei de completar as cenas do convite!
@@ -131,13 +115,9 @@ Que tal {st.session_state.escolha}
 
 Bora marcar? 🎬"""
     
-    # Codifica a mensagem para URL
     mensagem_encoded = urllib.parse.quote(mensagem)
-    
-    # Cria o link do WhatsApp
     whatsapp_link = f"https://wa.me/{MEU_WHATSAPP}?text={mensagem_encoded}"
     
-    # Botão que abre o WhatsApp
     st.markdown(f"""
     <a href="{whatsapp_link}" target="_blank">
         <button style="
